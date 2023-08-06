@@ -1,6 +1,9 @@
 import { Fragment } from "react";
+import { useSelector } from "react-redux";
 
 export default function HomePage() {
+  const technicalSkills = useSelector(state => state.skills);
+
   return (
     <Fragment>
       <h1>Hello, I'm Abhiram.</h1>
@@ -8,52 +11,18 @@ export default function HomePage() {
       <div>
         Welcome to my portfolio! I am a passionate full-stack developer with
         experience in building web applications from front-end to back-end. I
-        enjoy solving complex problems and creating user-friendly experiences.
+        enjoy solving complex problems.
       </div>
       <h3>Technical Skills</h3>
       <table>
-        <tr>
-          <th>Technical Skills</th>
-          <td>Full stack development, ASP .NET, OOPS, Debugging</td>
-        </tr>
-        <tr>
-          <th>Source Control</th>
-          <td>Git, BitBucket, GitLab, GitHub</td>
-        </tr>
-        <tr>
-          <th>Cloud Skills</th>
-          <td>Google Cloud Platform, Certified AWS Cloud Practitioner</td>
-        </tr>
-        <tr>
-          <th>Atlassian Tools</th>
-          <td>Confluence, Jira</td>
-        </tr>
-        <tr>
-          <th>Soft Skills</th>
-          <td>
-            Problem Solving, Team player, Technical documentation, Case
-            Analysis, Organizer
-          </td>
-        </tr>
-        <tr>
-          <th>Operating Systems</th>
-          <td>Windows, Linux</td>
-        </tr>
-        <tr>
-          <th>Deployment</th>
-          <td>Microsoft MSI, Docker, Terraform</td>
-        </tr>
-        <tr>
-          <th>Frontend Frameworks</th>
-          <td>Vue.js, React.js</td>
-        </tr>
-        <tr>
-          <th>Programming Languages</th>
-          <td>
-            <em>Proficient:</em> JavaScript, TypeScript, Python, C#{" "}
-            <em>Intermediate:</em> Java, C++ <em>Beginner:</em> R, Go
-          </td>
-        </tr>
+        <tbody>
+          {technicalSkills.map((skill, index) => (
+            <tr key={index}>
+              <th>{skill.category}</th>
+              <td>{skill.skills}</td>
+            </tr>
+          ))}
+        </tbody>
       </table>
     </Fragment>
   );

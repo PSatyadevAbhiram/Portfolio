@@ -3,7 +3,7 @@ import { useSelector } from "react-redux"
 import React from "react";
 
 const Experience = () => {
-  const experiences = useSelector((state) => state.experience);
+  const experiences = useSelector((state) => state.experiences);
 
   return (
     <React.Fragment>

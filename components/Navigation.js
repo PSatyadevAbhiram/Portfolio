@@ -13,6 +13,9 @@ const Navigation = () => {
                 <li>
                     <Link href="/about">About</Link>
                 </li>
+                <li>
+                    <Link href="/certifications">Certifications</Link>
+                </li>
             </ul>
         </nav>
     );
