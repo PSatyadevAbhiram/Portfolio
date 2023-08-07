@@ -17,7 +17,7 @@ const initialState = [
       ◦ Backend development: Responsible for polling data from Firebase and MongoDB using Python, to provide real
       time notifications and device monitoring respectively.;
       ◦ Application deployment: Responsible for writing 4 Docker files, maintaining Kubernetes engine on GCP and utilizing
-      Terraform and BitBuckets’s pipelines for CI CD.",
+      Terraform and BitBuckets’s pipelines for CI CD.;
     duration: "Sep 2021-Present`,
   },
   {

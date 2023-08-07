@@ -1,44 +1,52 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
+import classes from "./Certifications.module.css"; // Import your CSS module
 
 const Certifications = () => {
   const certifications = useSelector((state) => state.certifications);
-  console.log(certifications);
 
   const groupCertificationsByProvider = (certifications) => {
     const groupedCertifications = {};
     certifications.forEach((certification) => {
-      const { provider } = certification;
-      if (!groupedCertifications[provider]) {
-        groupedCertifications[provider] = [];
+      const { certName } = certification;
+      if (!groupedCertifications[certName]) {
+        groupedCertifications[certName] = [];
       }
-      groupedCertifications[provider].push(certification);
+      groupedCertifications[certName].push(certification);
     });
     return groupedCertifications;
   };
 
   const groupedCertifications = groupCertificationsByProvider(certifications);
-  console.log(groupedCertifications);
+
+  const [hoveredCertName, setCertName] = useState(null);
 
   return (
     <div>
       <h3>Certifications</h3>
       <ul>
-        {Object.entries(groupedCertifications).map(([provider, certifications]) => (
-          <li key={provider}>
-            <br/>
-            <strong>{provider}:</strong>
-            <ul>
-              {certifications.map((certification, index) => (
-                <li key={index}>
-                  Validation Number:{certification.validationNumber} <br/>
-                  Verification URL: {certification.certificateURL} <br/>
-                  Issue Date: {certification.issueDate} <br/>
-                  Expiry Date: {certification.expiryDate}
-                </li>
-              ))}
-              <br/>
-            </ul>
+        {Object.entries(groupedCertifications).map(([certName, certifications]) => (
+          <li
+            key={certName}
+            onMouseEnter={() => setCertName(certName)}
+            onMouseLeave={() => setCertName(null)}
+          >
+            <div className={classes.certificationCard}>
+              <strong>{certName}</strong>
+              {hoveredCertName === certName && (
+                <ul>
+                  {certifications.map((certification, index) => (
+                    <li key={index}>
+                      Provider: {certification.provider} <br />
+                      Validation Number: {certification.validationNumber} <br />
+                      Verification URL: {certification.certificateURL} <br />
+                      Issue Date: {certification.issueDate} <br />
+                      Expiry Date: {certification.expiryDate}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
           </li>
         ))}
       </ul>

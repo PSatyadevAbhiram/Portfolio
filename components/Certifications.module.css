@@ -1,0 +1,15 @@
+.certificationCard{
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0.42, 0, 0.58, 1)
+}
+
+.certificationCard:hover{
+    background-color: #363333;
+}
+
+.certificationCard.expanded{
+    max-height: 500px;
+}

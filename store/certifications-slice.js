@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = [
   {
+    certName: "AWS Certified Cloud Practitioner",
     provider: "Amazon Web Services",
     validationNumber: "SY531JS1XFQ41D3Q",
     certificateURL: "https://aws.amazon.com/verification",
@@ -9,6 +10,7 @@ const initialState = [
     expiryDate: "May 30, 2026",
   },
   {
+    certName: "Machine Learning by Andrew Ng",
     provider: "Coursera",
     validationNumner: "",
     certificateURL:"https://coursera.org/share/23aeaa6d5eb7807ee84b24f4778d02af/",
