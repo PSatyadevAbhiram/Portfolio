@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import classes from "./Certifications.module.css"; // Import your CSS module
+import styles from "./Certifications.module.css";
 
 const Certifications = () => {
   const certifications = useSelector((state) => state.certifications);
@@ -31,7 +31,7 @@ const Certifications = () => {
             onMouseEnter={() => setCertName(certName)}
             onMouseLeave={() => setCertName(null)}
           >
-            <div className={classes.certificationCard}>
+            <div className={styles.card}>
               <strong>{certName}</strong>
               {hoveredCertName === certName && (
                 <ul>
