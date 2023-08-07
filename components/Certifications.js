@@ -23,8 +23,8 @@ const Certifications = () => {
 
   return (
     <div>
-      <h3>Certifications</h3>
-      <ul>
+      <h3 className={styles.h3}>Certifications</h3>
+      <ul className={styles.ul}>
         {Object.entries(groupedCertifications).map(([certName, certifications]) => (
           <li
             key={certName}
@@ -36,7 +36,7 @@ const Certifications = () => {
               {hoveredCertName === certName && (
                 <ul>
                   {certifications.map((certification, index) => (
-                    <li key={index}>
+                    <li className={styles.cert_details} key={index}>
                       Provider: {certification.provider} <br />
                       Validation Number: {certification.validationNumber} <br />
                       Verification URL: {certification.certificateURL} <br />
