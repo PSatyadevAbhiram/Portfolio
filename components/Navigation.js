@@ -1,4 +1,5 @@
 const { default: Link } = require("next/link")
+import globalStyles from "./Globals.module.css";
 
 const Navigation = () => {
     return(
@@ -21,4 +22,4 @@ const Navigation = () => {
     );
 };
 
-export default Navigation
+export default Navigation;

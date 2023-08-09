@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import styles from "./Certifications.module.css";
+import globalStyles from "./Globals.module.css";
 
 const Certifications = () => {
   const certifications = useSelector((state) => state.certifications);
@@ -23,20 +23,20 @@ const Certifications = () => {
 
   return (
     <div>
-      <h3 className={styles.h3}>Certifications</h3>
-      <ul className={styles.ul}>
+      <h3 className={globalStyles.h3}>Certifications</h3>
+      <ul className={globalStyles.ul}>
         {Object.entries(groupedCertifications).map(([certName, certifications]) => (
           <li
             key={certName}
             onMouseEnter={() => setCertName(certName)}
             onMouseLeave={() => setCertName(null)}
           >
-            <div className={styles.card}>
+            <div className={globalStyles.card}>
               <strong>{certName}</strong>
               {hoveredCertName === certName && (
                 <ul>
                   {certifications.map((certification, index) => (
-                    <li className={styles.cert_details} key={index}>
+                    <li className={globalStyles.cert_details} key={index}>
                       Provider: {certification.provider} <br />
                       Validation Number: {certification.validationNumber} <br />
                       Verification URL: {certification.certificateURL} <br />
