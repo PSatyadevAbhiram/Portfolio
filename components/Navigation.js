@@ -1,11 +1,12 @@
 const { default: Link } = require("next/link")
 import globalStyles from "./Globals.module.css";
+import navStyles from "./Navigation.module.css";
 
 const Navigation = () => {
     return(
         <nav>
-            <ul>
-                <li>
+            <ul className={navStyles.ul}>
+                <li className={navStyles.li}>
                     <Link href="/">Home</Link>
                 </li>
                 <li>
