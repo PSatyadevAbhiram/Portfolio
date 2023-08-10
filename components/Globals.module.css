@@ -14,28 +14,9 @@
   margin-bottom: 20px;
 }
 
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Hover Effect */
-}
 
-.cert_details {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
 
-.card h3,
-.card p {
-  color: #333333; /* Text Color (Card Content) */
-}
 
-.cert_details p {
-  color: #FFFFFF; /* Text Color (Details) */
-}
 
-.ul {
-  list-style: none;
-}
+
+
