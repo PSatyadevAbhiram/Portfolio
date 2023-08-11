@@ -1,0 +1,64 @@
+.card {
+  cursor: default;
+}
+
+.sectionTitle {
+  cursor: default;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.sectionTitle::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5rem;
+  height: 0.2rem;
+  background-color: #000000;
+}
+
+.description {
+  cursor: default;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+}
+
+.skillsTable {
+  cursor: default;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  text-align: center; /* Add this line */
+}
+
+.tableRow {
+  cursor: default;
+  border-bottom: 1px solid #000;
+}
+
+@media screen and (max-width: 768px) {
+  .sectionTitle,
+  .description,
+  .skillsTable {
+    font-size: 1rem;
+  }
+}
